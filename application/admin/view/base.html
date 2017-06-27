@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="__AMAZEUI__/css/amazeui.min.css" />
+    <link rel="stylesheet" href="__AMAZEUI-DATATABLES__/amazeui.datatables.min.css" />
+    <link rel="stylesheet" href="__CSS__/main.css">
+
+    {block name="stylesheets"}css样式{/block}
+
+</head>
+<body>
+    <div class="am-g tpl-g">
+
+        {include file="partials/_header" /}
+
+        <!-- 风格切换 -->
+        <div class="tpl-skiner">
+            <div class="tpl-skiner-toggle am-icon-cog">
+            </div>
+            <div class="tpl-skiner-content">
+                <div class="tpl-skiner-content-title">
+                    选择主题
+                </div>
+                <div class="tpl-skiner-content-bar">
+                    <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                    <span class="skiner-color skiner-black" data-color="theme-black"></span>
+                </div>
+            </div>
+        </div>
+
+        {include file="partials/_slide" /}
+
+        {block name="content"}主内容{/block}
+    </div>
+
+    <script src="__JQUERY__/jquery.min.js"></script>
+
+    <script src="__ECHARTS__/echarts.min.js"></script>
+
+    <script src="__AMAZEUI__/js/amazeui.min.js"></script>
+    <script src="__AMAZEUI-DATATABLES__/amazeui.datatables.min.js"></script>
+    <script src="__AMAZEUI-DATATABLES__/dataTables.responsive.min.js"></script>
+
+    <script src="__JS__/theme.js"></script>
+    <script src="__JS__/main.js"></script>
+
+    {block name="scripts"}javascript{/block}
+
+</body>
+</html>
