@@ -10,6 +10,8 @@ return [
         '__AMAZEUI__'               =>  '/static/common/amazeui/dist'               ,
         '__AMAZEUI-DATATABLES__'    =>  '/static/common/amazeui-datatables/dist'    ,
         '__BOOTSTRAP__'             =>  '/static/common/bootstrap/dist'             ,
+        '__BOOTFLAT__'             =>  '/static/common/Bootflat'                    ,
         '__ECHARTS__'               =>  '/static/common/echarts/dist'               ,
+        '__TREEGRID__'              =>  '/static/common/jquery-treegrid'            ,
     ],
 ];

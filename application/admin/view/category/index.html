@@ -1,0 +1,131 @@
+{extend name="base" /}
+
+{block name="stylesheets"}
+    <!-- <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="__BOOTFLAT__/css/site.min.css" />
+    <link rel="stylesheet" href="__TREEGRID__/css/jquery.treegrid.css" />
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <style>
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .btn-circle {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.428571429;
+        }
+
+    </style>
+{/block}
+
+{block name="content"}
+
+<!-- 内容区域 -->
+<div class="tpl-content-wrapper">
+    <div class="row-content am-cf">
+        <div class="row">
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                <div class="widget am-cf">
+
+        <div class="widget-head am-cf">
+            <div class="widget-title  am-cf">分类列表</div>
+        </div>
+
+        <div class="widget-body  am-fr">
+            <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+                <div class="am-form-group">
+                    <div class="am-btn-toolbar">
+                        <div class="am-btn-group am-btn-group-xs">
+                            <button type="button" class="am-btn am-btn-default am-btn-success">
+                                <span class="am-icon-plus"></span> 新增</button>
+                            <button type="button" class="am-btn am-btn-default am-btn-secondary">
+                                <span class="am-icon-save"></span> 保存</button>
+                            <button type="button" class="am-btn am-btn-default am-btn-warning">
+                                <span class="am-icon-archive"></span> 审核</button>
+                            <button type="button" class="am-btn am-btn-default am-btn-danger">
+                                <span class="am-icon-trash-o"></span> 删除</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+                <div class="am-form-group tpl-table-list-select">
+                    <select data-am-selected="{btnSize: 'sm'}">
+                      <option value="option1">所有类别</option>
+                      <option value="option2">IT业界</option>
+                      <option value="option3">数码产品</option>
+                      <option value="option3">笔记本电脑</option>
+                      <option value="option3">平板电脑</option>
+                      <option value="option3">只能手机</option>
+                      <option value="option3">超极本</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
+                <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
+                    <input type="text" class="am-form-field ">
+                    <span class="am-input-group-btn">
+    <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button" />
+                    </span>
+                </div>
+            </div>
+
+            <div class="am-u-sm-12">
+
+                <table id="tree" class="table">
+                    <thead>
+                        <tr>
+                            <th width="100px">折叠</th>
+                            <th class="text-center" width="70px">排序</th>
+                            <th class="text-center" >分类名称</th>
+                            <th class="text-center" width="150px">状态</th>
+                            <th class="text-center" width="150px">是否显示</th>
+                            <th class="text-center" width="250px">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {:action('Category/tree', array($category_tree))}
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="scripts"}
+    <script type="text/javascript" src="__BOOTSTRAP__/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__TREEGRID__/js/jquery.treegrid.js"></script>
+    <script type="text/javascript" src="__TREEGRID__/js/jquery.treegrid.bootstrap3.js"></script>
+
+    <script>
+        $(function() {
+            $("#tree").treegrid({
+                expanderExpandedClass: 'glyphicon glyphicon-minus',
+                expanderCollapsedClass: 'glyphicon glyphicon-plus',
+            });
+
+            $("#tree").treegrid('collapseRecursive');
+
+        });
+    </script>
+{/block}

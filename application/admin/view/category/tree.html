@@ -1,0 +1,50 @@
+{volist name="tree" id="vo"}
+    <tr class="treegrid-{$vo.id}{if condition="$vo.level neq '1'"} treegrid-parent-{$vo.pid}{/if}">
+        <td class="am-text-middle"></td>
+        <td class="text-center">
+            <div class="form-group">
+                <input type="text" class="form-control" value="{$vo.sort}">
+            </div>
+        </td>
+        <form class="am-form tpl-form-border-form">
+            <td class="text-center">
+                <div class="form-group">
+                    <input type="text" class="form-control" value="{$vo.name}">
+                </div>
+            </td>
+
+            <td class="text-center">
+                <button type="button" class="btn btn-info btn-circle">
+                    <i class="fa fa-check"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-circle">
+                    <i class="fa fa-times"></i>
+                </button>
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-info btn-circle">
+                    <i class="fa fa-check"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-circle">
+                    <i class="fa fa-times"></i>
+                </button>
+            </td>
+        </form>
+        <td class="text-center am-text-middle">
+            <div class="tpl-table-black-operation">
+                <a href="javascript:;" class="tpl-table-black-operation-add">
+                    <i class="am-icon-plus"></i> 新增
+                </a>
+                <a href="javascript:;">
+                    <i class="am-icon-pencil"></i> 编辑
+                </a>
+                <a href="javascript:;" class="tpl-table-black-operation-del">
+                    <i class="am-icon-trash"></i> 删除
+                </a>
+            </div>
+        </td>
+    </tr>
+    {notempty name="vo['_child']"}
+        {:action('Category/tree', array($vo['_child']))}
+    {/notempty}
+{/volist}
