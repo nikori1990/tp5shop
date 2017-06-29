@@ -23,6 +23,23 @@
             line-height: 1.428571429;
         }
 
+        .pl-1{
+            padding-left:0;
+        }
+        .pl-2{
+            padding-left:40px !important;
+        }
+        .pl-3{
+            padding-left:80px !important;
+        }
+
+        .pr{
+            padding-right:40px !important;
+        }
+
+        .pr-2{
+            padding-right:80px !important;
+        }
     </style>
 {/block}
 
@@ -82,12 +99,22 @@
 
             <div class="am-u-sm-12">
 
+                <table id="table"
+                        data-toggle="table"
+                        data-pagination="true"
+                        data-url="category.json">
+
+
+                </table>
+
+
+
                 <table id="tree" class="table">
                     <thead>
                         <tr>
-                            <th width="100px">折叠</th>
-                            <th class="text-center" width="70px">排序</th>
-                            <th class="text-center" >分类名称</th>
+                            <th width="50px">折叠</th>
+                            <th class="text-center pr-2" >分类名称</th>
+                            <th class="text-center pr" width="100px">排序</th>
                             <th class="text-center" width="150px">状态</th>
                             <th class="text-center" width="150px">是否显示</th>
                             <th class="text-center" width="250px">操作</th>

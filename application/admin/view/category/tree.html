@@ -1,15 +1,17 @@
 {volist name="tree" id="vo"}
     <tr class="treegrid-{$vo.id}{if condition="$vo.level neq '1'"} treegrid-parent-{$vo.pid}{/if}">
         <td class="am-text-middle"></td>
-        <td class="text-center">
-            <div class="form-group">
-                <input type="text" class="form-control" value="{$vo.sort}">
-            </div>
-        </td>
+
         <form class="am-form tpl-form-border-form">
-            <td class="text-center">
+            <td class="text-center pl-{$vo.level} pr-2">
                 <div class="form-group">
                     <input type="text" class="form-control" value="{$vo.name}">
+                </div>
+            </td>
+
+            <td class="text-center pr">
+                <div class="form-group">
+                    <input type="text" class="form-control" value="{$vo.sort}">
                 </div>
             </td>
 
