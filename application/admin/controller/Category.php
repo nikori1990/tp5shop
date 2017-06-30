@@ -20,4 +20,10 @@ class Category extends Controller
         $this->assign('tree', $tree);
         return $this->fetch('tree');
     }
+
+    public function add($pid = null)
+    {
+        return $this->fetch('add');
+    }
+
 }

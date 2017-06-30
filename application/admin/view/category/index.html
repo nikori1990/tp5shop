@@ -4,43 +4,9 @@
     <!-- <link rel="stylesheet" href="__BOOTSTRAP__/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="__BOOTFLAT__/css/site.min.css" />
     <link rel="stylesheet" href="__TREEGRID__/css/jquery.treegrid.css" />
+    <link rel="stylesheet" href="__CSS__/category.css" />
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-
-    <style>
-        .form-group {
-            margin-bottom: 0;
-        }
-
-        .btn-circle {
-            width: 30px;
-            height: 30px;
-            padding: 6px 0;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 12px;
-            line-height: 1.428571429;
-        }
-
-        .pl-1{
-            padding-left:0;
-        }
-        .pl-2{
-            padding-left:40px !important;
-        }
-        .pl-3{
-            padding-left:80px !important;
-        }
-
-        .pr{
-            padding-right:40px !important;
-        }
-
-        .pr-2{
-            padding-right:80px !important;
-        }
-    </style>
 {/block}
 
 {block name="content"}
@@ -53,10 +19,11 @@
                 <div class="widget am-cf">
 
         <div class="widget-head am-cf">
-            <div class="widget-title  am-cf">分类列表</div>
+            <div class="widget-title am-cf">分类列表</div>
         </div>
 
         <div class="widget-body  am-fr">
+
             <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
                 <div class="am-form-group">
                     <div class="am-btn-toolbar">
@@ -92,26 +59,16 @@
                 <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
                     <input type="text" class="am-form-field ">
                     <span class="am-input-group-btn">
-    <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button" />
+                        <button class="am-btn  am-btn-default am-btn-success
+                        tpl-table-list-field am-icon-search" type="button" />
                     </span>
                 </div>
             </div>
 
             <div class="am-u-sm-12">
-
-                <table id="table"
-                        data-toggle="table"
-                        data-pagination="true"
-                        data-url="category.json">
-
-
-                </table>
-
-
-
-                <table id="tree" class="table">
+                <table id="category" class="table">
                     <thead>
-                        <tr>
+                        <tr style="background-color:#48CFAD; color:#FFF; font-size:16px">
                             <th width="50px">折叠</th>
                             <th class="text-center pr-2" >分类名称</th>
                             <th class="text-center pr" width="100px">排序</th>
@@ -124,11 +81,10 @@
                         {:action('Category/tree', array($category_tree))}
                     </tbody>
                 </table>
-
             </div>
 
         </div>
-
+        <!-- widget-body -->
 
 
                 </div>
@@ -140,13 +96,14 @@
 {/block}
 
 {block name="scripts"}
-    <script type="text/javascript" src="__BOOTSTRAP__/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__BOOTFLAT__/js/site.min.js" ></script>
+    <!-- <script type="text/javascript" src="__BOOTSTRAP__/js/bootstrap.min.js"></script> -->
     <script type="text/javascript" src="__TREEGRID__/js/jquery.treegrid.js"></script>
     <script type="text/javascript" src="__TREEGRID__/js/jquery.treegrid.bootstrap3.js"></script>
 
     <script>
         $(function() {
-            $("#tree").treegrid({
+            $("#category").treegrid({
                 expanderExpandedClass: 'glyphicon glyphicon-minus',
                 expanderCollapsedClass: 'glyphicon glyphicon-plus',
                 initialState:'collapsed'
